@@ -7,7 +7,8 @@
     "build": "tsc",
     "start": "npm run build && electron .",
     "dev": "concurrently \"tsc -w\" \"wait-on dist/main.js && nodemon dist/main.js --exec electron .\"",
-    "dist": "npm run build && electron-builder"
+    "dist-publish": "npm run build && electron-builder",
+    "dist": "npm run build && electron-builder --win --publish never"
   },
   "build": {
     "appId": "com.smkalkyai.cbt",
