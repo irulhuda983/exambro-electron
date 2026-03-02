@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Set Server CBT</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+    button { padding: 8px 12px; }
+  </style>
+</head>
+<body>
+  <h3>Masukkan URL Server CBT</h3>
+  <input id="serverUrl" placeholder="https://cbt.smkalkyai.sch.id" />
+  <button onclick="submit()">Lanjut</button>
+
+  <script>
+    const { ipcRenderer } = require("electron");
+
+    function submit() {
+      const url = document.getElementById("serverUrl").value;
+      ipcRenderer.send("server-selected", url);
+    }
+  </script>
+</body>
+</html>
